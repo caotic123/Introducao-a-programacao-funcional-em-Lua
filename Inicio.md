@@ -115,3 +115,9 @@ _print = function() io.write("*") end
 ((function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end) 
 ((function() return (function(x) return end) end)) (_print)) (_print))
 ```
+
+Não é só possivel desenvolver o car como também outras abstrações comoo o caar que retorna o 2 elemento da lista(dada uma lista com os valores (0, 2)):
+
+```
+caar (list (list (list) ((function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print)) ) (function() return (function(x) return end) end)) ()
+```
