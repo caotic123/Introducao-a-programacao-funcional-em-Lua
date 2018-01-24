@@ -110,5 +110,8 @@ Assim como scheme podemos dar um "car" em uma lista e retornar seu primeiro elem
 
 ```lua
 _print = function() io.write("*") end
-(function(x) return x ((function(x) return (function(y) return y end) end)) end ) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print))
+(function(x) return x ((function(x) return (function(y) return y end) end)) end ) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) 
+(function (x) return (function(y) return (function(z) return z(x)(y) end) end) end)
+((function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end) 
+((function() return (function(x) return end) end)) (_print)) (_print))
 ```
