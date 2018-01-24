@@ -1,6 +1,6 @@
 # Programando funcionalmente em Lua
 
-Todo programador já deve ter escutado algum sobre um paradigma na qual desconhecia.... bem isto é perfeitamente normal, alias a quantidade de formas de pensar (isto é o formalismo logico) é gigantesca. Vamos considerar um exemplo simples em Lua definido de forma imperativa que costuma ser a mais impregada:
+Todo programador já deve ter escutado algo sobre um paradigma na qual desconhecia.... bem isto é perfeitamente normal, alias a quantidade de formas de pensar (isto é o formalismo logico) é gigantesca. Vamos considerar um exemplo simples em Lua definido de forma imperativa que costuma ser a mais impregada:
 
 ```lua
 for i=12, 0, -1 print(i) do end
