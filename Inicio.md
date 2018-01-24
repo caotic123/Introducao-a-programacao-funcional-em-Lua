@@ -102,5 +102,5 @@ Que irá imprimir :
 
 Agora finalmente podemos definir listas com um simples exemplo que cria uma lista com o valor 0:
 
-´´´lua
+```lua
 (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function() return function(x) return end end)```
