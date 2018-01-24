@@ -77,6 +77,7 @@ _newline = function() io.write("\n") end
 ```
 
 A seguinte função recebe 0 e então adiciona +1 e imprime o resultado a cada recursividade
+
 Que irá imprimir :
 
 ```
@@ -98,3 +99,8 @@ Que irá imprimir :
 ***************
 (... infinite ...)
 ```
+
+Agora finalmente podemos definir listas com um simples exemplo que cria uma lista com o valor 0:
+
+´´´lua
+(function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function() return function(x) return end end)```
