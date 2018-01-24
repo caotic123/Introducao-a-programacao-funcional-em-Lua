@@ -66,4 +66,32 @@ No entanto não queremos ultlizar variaveis como suporte, então ultilizaremos e
  (function (x) return x(x) end) (function (x) print("infinite") return x(x) end)
  ```
 
-Passando a função ```(function (x) print("infinite") return x(x) end)``` como argumento e colocando ela mesma como argumentos podemos chamar ela mesma para executar uma recursividade infinita. 
+Passando a função ```(function (x) print("infinite") return x(x) end)``` como argumento em uma função e colocando ela mesma como argumento podemos chamar ela mesma para executar uma recursividade infinita. Então agora podemos pensar em algoritmos mais complexos
+
+```lua
+_print = function() io.write("*") end
+_newline = function() io.write("\n") end
+
+(function (x) return (function (y) return x(x)(y) end) end) (function (x) return (function(y) y() _newline() return x(x)((function (n) return (function (y) return (function() y() return n() end) end) end)(y) (_print)) end) end) (function() return (function(x) return end) end)
+```
+
+Que irá imprimir :
+
+```
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+***********
+************
+*************
+**************
+***************
+(... infinite ...)
+```
