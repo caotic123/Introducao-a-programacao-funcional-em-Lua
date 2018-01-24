@@ -53,4 +53,16 @@ _print = function() io.write("*") end
 
 (function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print) ()
 ```
-Que gera o output ```"**"``` equivalente a 2
+Que gera o output ```"**"``` equivalente a 2. Agora para conseguirmos executar algoritmos mais complexos precisamos definir uma forma de repetição. Que fica facilmente definida com uma recursividade ultilizando Short Anonymous Functions.
+
+```lua
+x = (function() print("Infinite") return x() end) x()
+```
+
+No entanto não queremos ultlizar variaveis como suporte, então ultilizaremos em nosso material algum combinator capaz de fazer lambda suportar recursividade.
+
+```lua
+--- FIXED POINT FUNC
+ (function (x) return x(x) end) (function (x) print("infinite") return x(x) end)```
+
+Passando a função ```(function (x) print("infinite") return x(x) end)``` como argumento e colocando ela mesma como argumentos podemos chamar ela mesma para executar uma recursividade infinita. 
