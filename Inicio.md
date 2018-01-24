@@ -46,4 +46,11 @@ _print = function() io.write("*") end
 inc = function (n) return (function (y) return (function() y() return n() end) end) end
 ```
 
-Fica facil então implementar o incremento de um numero que começa em 1 ```inc(zero) (_print)``` ou 2 ```inc (inc(zero) (_print)) (_print) ()``` 
+Fica facil então implementar o incremento de um numero que começa em 1 ```inc(zero) (_print)``` ou 2 ```inc (inc(zero) (_print)) (_print) ()```, mas como foi dito anteroimente não precisamos de funções anonimas logo refazendo o seguinte codigo fica:
+
+```lua
+_print = function() io.write("*") end
+
+(function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print) ()
+```
+Que gera o output ```"**"``` equivalente a 2
