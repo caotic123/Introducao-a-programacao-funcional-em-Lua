@@ -21,7 +21,7 @@ Assim como o paradigma imperativo é possível deduzir outras formas lógicas qu
 
 # Entendendo os conceitos de programação funcional em Lua
 
-Funções em Lua são chamadas de funções de primeira classe, isto significa que podemos passar seus valores por argumentos ou mesmo armazenar em variaveis (pratica conhecida como funções anonimas), alem disso podemos acessar variaveis fora do seu escopo.
+Funções em Lua são chamadas de funções de primeira classe, isto significa que podemos passar seus valores por argumentos ou mesmo armazenar em variáveis (prática conhecida como funções anônimas), além disso podemos acessar variáveis fora do seu escopo.
 
 ```lua
 x = 12
@@ -35,7 +35,7 @@ Vamos definir a seguinte função lambda:
 function(x) return (function(y) return (x+y) end) end
 ```
 
-Perceba que a função recebe apenas um argumento e retorna outra função realizando a soma entre x+y. No caso ```(function(x) return (function(y) return (x+y) end) end) (12, 12)``` retornaria 24. Este processo se denomina curry, que significa dividir o número de argumentos em apenas um e seguir com uma sequência de funções. A partir de agora utilizaremos apenas funções com esse padrão. Em programação funcional tudo é absolutamente tudo é função isto significa que para estudarmos seu poder computacional vamos ter que abstrair algumas coisinhas considere então:
+Perceba que a função recebe apenas um argumento e retorna outra função realizando a soma entre x+y. No caso ```(function(x) return (function(y) return (x+y) end) end) (12, 12)``` retornaria 24. Este processo se denomina curry, que significa dividir o número de argumentos em apenas um e seguir com uma sequência de funções. A partir de agora utilizaremos apenas funções com esse padrão. Em programação funcional tudo é absolutamente função, isto significa que para estudarmos seu poder computacional vamos ter que abstrair algumas coisinhas considere então:
 
 ```lua
 i = function(x) return x() end
@@ -67,7 +67,7 @@ _print = function() io.write("*") end
 inc = function (n) return (function (y) return (function() y() return n() end) end) end
 ```
 
-Fica fácil então implementar o incremento de um número que começa em 1 ```inc(zero) (_print)``` ou 2 ```inc (inc(zero) (_print)) (_print) ()```, mas como foi dito anteriormente não precisamos de funções anônimas logo refazendo o seguinte codigo fica:
+Fica fácil então implementar o incremento de um número que começa em 1 ```inc(zero) (_print)``` ou 2 ```inc (inc(zero) (_print)) (_print) ()```, mas como foi dito anteriormente não precisamos de funções anônimas logo refazendo o seguinte código fica:
 
 ```lua
 _print = function() io.write("*") end
@@ -137,7 +137,7 @@ _print = function() io.write("*") end
 ((function() return (function(x) return end) end)) (_print)) (_print))
 ```
 
-Não é só possivel desenvolver o car como também outras abstrações comoo o caar que retorna o 2 elemento da lista(dada uma lista com os valores (0, 2)):
+Não é só possível desenvolver o car como também outras abstrações como o caar que retorna o 2 elemento da lista(dada uma lista com os valores (0, 2)):
 
 ```lua
 _print = function() io.write("*") end
@@ -162,5 +162,6 @@ Logo, o resto pode ser criado simplesmente chamando a lista isto é (lista ()) d
 
 
 # DEPOIS TEM MAIS POR ENQUANTO É ISSO.
+
 
 
