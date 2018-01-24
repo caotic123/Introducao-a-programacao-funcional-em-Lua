@@ -74,7 +74,7 @@ _print = function() io.write("*") end
 
 (function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print) ()
 ```
-Que gera o output ```"**"``` equivalente a 2. Agora para conseguirmos executar algoritmos mais complexos precisamos definir uma forma de repetição. Que fica facilmente definida com uma recursividade utilizando Short Anonymous Functions.
+Que gera o output ```"**"``` equivalente a 2. Agora para conseguirmos executar algoritmos mais complexos precisamos definir uma forma de repetição utilizando Short Anonymous Functions podemos fazer a seguinte maneira:
 
 ```lua
 x = (function() print("Infinite") return x() end) x()
