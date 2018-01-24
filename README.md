@@ -1,1 +1,1 @@
-# Introdu-o-a-programa-o-funcional-em-Lua
+# Introdução a programação funcional em Lua
