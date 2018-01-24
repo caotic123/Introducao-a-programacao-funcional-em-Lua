@@ -158,7 +158,7 @@ return (x) (x) (y (function(x) return (function(y) return x end) end)) end) end)
 (function (y) return (function() y() return n() end) end) end) (function() return function(x) return end end) (_print))) ((function (n) return (function (y) return (function() y() return n() end) end) end) (function() return function(x) return end end) (_print)))
 ```
 
-Logo, o resto pode ser criado simplesmente chamando a lista isto é (lista ()) dispensa o 1 argumento e retorna o restante :).
+Logo, o cdr(resto) pode ser criado simplesmente chamando a lista isto é (lista ()) dispensa o 1 argumento e retorna o restante então lista(2, 3, 1) () = lista(3, 1) :).
 
 
 # DEPOIS TEM MAIS POR ENQUANTO É ISSO.
