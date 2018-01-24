@@ -103,4 +103,12 @@ Que irá imprimir :
 Agora finalmente podemos definir listas com um simples exemplo que cria uma lista com o valor 0:
 
 ```lua
-(function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function() return function(x) return end end)```
+(function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function() return function(x) return end end)
+```
+
+Assim como scheme podemos dar um "car" em uma lista e retornar seu primeiro elemento como no caso de adicionar o elemento 0 na lista incrementar 2 vezes e depois retornar o 1 elemento da lista imprimindo ```**```:
+
+```lua
+_print = function() io.write("*") end
+(function(x) return x ((function(x) return (function(y) return y end) end)) end ) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print))
+```
