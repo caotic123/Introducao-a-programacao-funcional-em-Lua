@@ -72,12 +72,15 @@ Passando a função ```(function (x) print("infinite") return x(x) end)``` como 
 _print = function() io.write("*") end
 _newline = function() io.write("\n") end
 
-(function (x) return (function (y) return x(x)(y) end) end) (function (x) return (function(y) y() _newline() return x(x)((function (n) return (function (y) return (function() y() return n() end) end) end)(y) (_print)) end) end) (function() return (function(x) return end) end)
+(function (x) return (function (y) return x(x)(y) end) end) (function (x) return (function(y) y() _newline() return x(x)((function (n) return (function (y) return (function() y() return n() end) end) end)(y) (_print)) end) end)
+(function() return (function(x) return end) end)
 ```
 
+A seguinte função recebe 0 e então adiciona +1 e imprime o resultado a cada recursividade
 Que irá imprimir :
 
 ```
+
 *
 **
 ***
