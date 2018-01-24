@@ -17,7 +17,7 @@ Assim como o paradigma imperativo é possível deduzir outras formas lógicas qu
 
 # Mas porque programação funcional?
 
-É uma boa pergunta, bem... programação funcional foi extensivamente utilizado para trabalhos de inteligência artificial durante a década de 80/90, entretanto teve uma queda em seu uso devido uma dificuldade em compreender sua complexidade sobretudo em otimizações. O tempo passou e hoje ela é utilizado justamente para otimização em compiladores modernos (LLVM, LuaJit entre outros).
+É uma boa pergunta, bem... programação funcional foi extensivamente utilizado para trabalhos de inteligência artificial durante a década de 80/90, entretanto teve uma queda em seu uso devido uma dificuldade em compreender sua complexidade sobretudo em otimizações. O tempo passou e hoje ela é utilizada justamente para otimização em compiladores modernos (LLVM, LuaJit entre outros).
 
 # Entendendo os conceitos de programação funcional em Lua
 
@@ -38,18 +38,18 @@ function(x) return (function(y) return (x+y) end) end
 Perceba que a função recebe apenas um argumento e retorna outra função realizando a soma entre x+y. No caso ```(function(x) return (function(y) return (x+y) end) end) (12, 12)``` retornaria 24. Este processo se denomina curry, que significa dividir o número de argumentos em apenas um e seguir com uma sequência de funções. A partir de agora utilizaremos apenas funções com esse padrão. Em programação funcional tudo é absolutamente tudo é função isto significa que para estudarmos seu poder computacional vamos ter que abstrair algumas coisinhas considere então:
 
 ```lua
-function(x) return (function(y) return (x+y) end) end
+i = function(x) return x() end
+v = function(x) return v end
 ```
 
 Sabendo disso podemos elaborar uma forma de simular o `if` de linguagens imperativas
 
 ```lua
-i = function(x) return x() end
-v = function(x) return v end
 eq = function(x) return (function(y) return (y == x) and (function (z) return i(z) end) or (function (z) return v(z) end) end) end 
 
 eq(2)(2)(function() print("equal") end)
 ```
+
 O conceito é bem simples o combinator i retorna evaluating a função no seu unico parâmetro(isto é a função sendo chamada), já v ignora seu único parâmetro e retorna ele mesmo, por fim eq verifica se x == y e retorna lambda de i se for verdadeiro ou v se for falso. Reformulando o código podemos tirar as variáveis para obter:
 
 ```lua
