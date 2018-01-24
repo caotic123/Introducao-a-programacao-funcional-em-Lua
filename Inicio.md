@@ -122,3 +122,19 @@ Não é só possivel desenvolver o car como também outras abstrações comoo o 
 _print = function() io.write("*") end
 (function(x) return (x ((function(x) return (function(y) return x end) end))) ((function(x) return (function(y) return y end) end)) end) ((function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) ((function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) (function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end)((function() return (function(x) return end) end)) (_print)) (_print)) ) (function() return (function(x) return end) end)) ()
 ```
+
+No exemplo a seguir iremos construir uma lista (1, 1, 1) e iremos percorrer e imprimir até que seu valor seja nil value parando o interpretador/compilador de Lua.
+
+```lua
+_print = function() print("*") end
+
+(function (x) return (function (y) return x(x)(y) end) end)
+(function (x) return (function(y) ((function(x) return x ((function(x) return (function(y) return y end) end)) end) (y)) ()
+return (x) (x) (y (function(x) return (function(y) return x end) end)) end) end) ((function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) 
+((function (x) return (function(y) return (function(z) return z(x)(y) end) end) end) ((function (x) return (function(y) return (function(z) return z(x)(y) end) end) end)
+(function(n) return (function(x) return (function(y) return end) end) end) ((function (n) return (function (y) return (function() y() return n() end) end) end) (function() return function(x) return end end) 
+(_print))) ((function (n) return 
+(function (y) return (function() y() return n() end) end) end) (function() return function(x) return end end) (_print))) ((function (n) return (function (y) return (function() y() return n() end) end) end) (function() return function(x) return end end) (_print)))
+```
+
+
