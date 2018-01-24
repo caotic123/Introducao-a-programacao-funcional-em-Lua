@@ -63,6 +63,7 @@ No entanto não queremos ultlizar variaveis como suporte, então ultilizaremos e
 
 ```lua
 --- FIXED POINT FUNC
- (function (x) return x(x) end) (function (x) print("infinite") return x(x) end)```
+ (function (x) return x(x) end) (function (x) print("infinite") return x(x) end)
+ ```
 
 Passando a função ```(function (x) print("infinite") return x(x) end)``` como argumento e colocando ela mesma como argumentos podemos chamar ela mesma para executar uma recursividade infinita. 
