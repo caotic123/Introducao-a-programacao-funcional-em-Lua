@@ -161,6 +161,6 @@ return (x) (x) (y (function(x) return (function(y) return x end) end)) end) end)
 Logo, o resto pode ser criado simplesmente chamando a lista isto é (lista ()) dispensa o 1 argumento e retorna o restante :).
 
 
-DEPOIS TEM MAIS POR ENQUANTO É ISSO.
+# DEPOIS TEM MAIS POR ENQUANTO É ISSO.
 
 
