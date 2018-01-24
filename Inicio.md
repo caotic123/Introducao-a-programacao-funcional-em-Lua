@@ -33,7 +33,8 @@ O conceito é bem simples o combinator i retorna evaluating a função no seu un
 
 ```lua
 eq = function(x) return (function(y) return x == y end) end
-(function (i) return (function(v) return (function(x) return (function(y) return eq(x, y) and (function (z) return i(z) end) or (function (z) return v(z) end) end) end) end) end) (function(x) return x() end) (function(x) return v end) (2)(2)(function() print("equal") end)
+(function (i) return (function(v) return (function(x) return (function(y) return eq(x, y) and (function (z) return i(z) end) or (function (z) return v(z) end) end) end) end) end) 
+(function(x) return x() end) (function(x) return v end) (2) (2) (function() print("equal") end)
 ```
 
 Deixando apenas eq (==) e abstraindo o resto fica facil perceber que não precisamos de variaveis ou de outras formas de construções isto é apenas funçôes são necessarias.
