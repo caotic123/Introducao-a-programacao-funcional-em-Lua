@@ -1,4 +1,4 @@
-# Programando funcionalmente em Lua
+# Entedendo os conceitos de programação funcional em Lua
 
 Funções em Lua são chamadas de funções de primeira classe, isto significa que podemos passar seus valores por argumentos ou mesmo armazenar em variaveis (pratica conhecida como funções anonimas), alem disso podemos acessar variaveis fora do seu escopo.
 
@@ -37,4 +37,13 @@ eq = function(x) return (function(y) return x == y end) end
 (function(x) return x() end) (function(x) return v end) (2) (2) (function() print("equal") end)
 ```
 
-Deixando apenas eq (==) e abstraindo o resto fica facil perceber que não precisamos de variaveis ou de outras formas de construções isto é apenas funçôes são necessarias.
+Deixando apenas eq (==) e abstraindo o resto fica facil perceber que não precisamos de variaveis ou de outras formas de construções isto é apenas funçôes são necessarias. Logo em seguida vamos ir mais a frente e abstrair alguns valores que precisaremos posteriomente. Definimos então church integers como:
+
+```lua
+v = function(x) return end
+zero = function() return v end
+_print = function() io.write("*") end
+inc = function (n) return (function (y) return (function() y() return n() end) end) end
+```
+
+Fica facil então implementar o incremento de um numero que começa em 1 ```inc(zero) (_print)``` ou 2 ```inc (inc(zero) (_print)) (_print) ()``` 
