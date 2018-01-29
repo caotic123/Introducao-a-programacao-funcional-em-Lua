@@ -34,7 +34,7 @@ Vamos definir a seguinte função lambda:
 function(x) return (function(y) return (x+y) end) end
 ```
 
-Perceba que a função recebe apenas um argumento e retorna outra função realizando a soma entre x+y. No caso ```(function(x) return (function(y) return (x+y) end) end) (12, 12)``` retornaria 24. Este processo se denomina curry, que significa dividir o número de argumentos em apenas um e seguir com uma sequência de funções. A partir de agora utilizaremos apenas funções com esse padrão. Em programação funcional tudo é absolutamente função, isto significa que para estudarmos seu poder computacional vamos ter que abstrair algumas coisinhas considere então:
+Perceba que a função recebe apenas um argumento e retorna outra função realizando a soma entre x+y. No caso ```(function(x) return (function(y) return (x+y) end) end) (12) (12)``` retornaria 24. Este processo se denomina curry, que significa dividir o número de argumentos em apenas um e seguir com uma sequência de funções. A partir de agora utilizaremos apenas funções com esse padrão. Em programação funcional tudo é absolutamente função, isto significa que para estudarmos seu poder computacional vamos ter que abstrair algumas coisinhas considere então:
 
 ```lua
 i = function(x) return x() end
