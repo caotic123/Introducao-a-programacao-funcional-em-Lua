@@ -10,7 +10,6 @@ Esta é uma forma simples de resolver um problema(no caso imprimir de 0 a 12), m
 
 ```lua
 y = (function (x, f_) return f_(x) or (x == 0 or y(x-1, f_)) end) y(12, print)
-y(12, print)
 ```
 Mas como isso é possível?
 Assim como o paradigma imperativo é possível deduzir outras formas lógicas que contém uma relação de isomorfismo com qualquer outro tipo de formalismo lógico Turing completeness. Isto é, não importa se o seu código fosse executado em uma Maquina de Turing ou em uma Máquina baseada no modelo funcional é possível "traduzir" para uma forma compreensível à máquina seja imperativo <-> procedural <-> lógico <-> funcional.
